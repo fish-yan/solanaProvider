@@ -1,0 +1,18 @@
+{
+    "include": [
+        "src/**/*.ts"
+    ],
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "esModuleInterop": true,
+        "isolatedModules": false,
+        "noEmitOnError": true,
+        "resolveJsonModule": true,
+        "strict": true,
+        "stripInternal": true,
+        "noUncheckedIndexedAccess": true,
+        "noImplicitAny": false
+    }
+}
