@@ -39,7 +39,7 @@ import { isSolanaChain, isVersionedTransaction, SOLANA_CHAINS } from './solana';
 import { bytesEqual } from './util';
 import type { ONTO } from './window';
 
-export const ONTONamespace = 'ONTO:';
+export const ONTONamespace = 'nativewallet:';
 
 export type ONTOFeature = {
     [ONTONamespace]: {
@@ -50,7 +50,7 @@ export type ONTOFeature = {
 export class ONTOWallet implements Wallet {
     readonly #listeners: { [E in StandardEventsNames]?: StandardEventsListeners[E][] } = {};
     readonly #version = '1.0.0' as const;
-    readonly #name = 'ONTO' as const;
+    readonly #name = 'Native Wallet' as const;
     readonly #icon = icon;
     #account: ONTOWalletAccount | null = null;
     readonly #ONTO: ONTO;
