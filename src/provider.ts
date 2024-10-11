@@ -100,11 +100,11 @@ export default class SolanaProvider extends BaseProvider implements ONTO {
     async signMessage(message: Uint8Array): Promise<{ signature: Uint8Array; }> {
         const data = SolanaProvider.bufferToHex(message);
         const res = await this.request({
-            method: 'signMessage',
-            params: { data },
-        }) as string;
+            method: 'signTransaction',
+            params: { message: data },
+        });
         return {
-            signature: Buffer.from(SolanaProvider.messageToBuffer(res).buffer),
+            signature: bs58.decode((res as any).signature),
         };
     }
     signIn(input?: SolanaSignInInput | undefined): Promise<SolanaSignInOutput> {
